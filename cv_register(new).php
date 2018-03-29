@@ -30,7 +30,7 @@ if($file_name){
 
 
 function sendCV($job,$name,$cv_from,$email,$cv,$client_email,$firstname,$jobref) {
-	include_once('class.phpmailer.php');
+	include_once('class.phpmailer2.php');
 //include_once('sendgrid.php');
 
 $mail             = new PHPMailer();
