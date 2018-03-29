@@ -29,8 +29,8 @@ if($file_name){
 
 
 
-function sendCV($job,$name,$cv_from,$email,$cv,$client_email,$firstname,$jobref) {
-	include_once('class.phpmailer2.php');
+function sendCV($job,$name,$cv_from,$email,$cv,$client_email,$firstname,$jobref,$email_target) {
+include_once('class.phpmailer2.php');
 //include_once('sendgrid.php');
 
 $mail             = new PHPMailer();
@@ -95,7 +95,7 @@ $body             = eregi_replace("[\]",'',$body);
 			//$mail->AddBCC('deanira@javainspiration.com');
 			$attc="https://otclient.com/upl_cv/$cv";
 			//$mail->AddAttachment('images/recruitmentboutiquemanual.pdf',"recruitmentboutiquemanual.pdf");
-			$mail->AddAttachment("../upl_cv/");  // attachment
+			$mail->AddAttachment("../upl_cv/$cv");  // attachment
 				if($mail->Send()){
 					return true;
 				}else{
